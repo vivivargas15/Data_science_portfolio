@@ -1,0 +1,1 @@
+This page is a compilation of works that demonstrate the skills acquired on my own and that are part of my training as a future  data scientist
