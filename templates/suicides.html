@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 id="1999"  class="pw-post-title et eu ev be ew ex ey ez fa fb fc fd fe ff fg fh fi fj fk fl fm fn fo fp fq fr fs ft fu fv bj"
+  data-testid="storyTitle" data-selectable-paragraph="">Project 1: Exploring suicide data (EDA) with PYTHON.</h2>
+
+<p>Prepared by: Viviana Vargas</p>
+
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <img src="{{url_for('static', filename='css/suicide_stop.jpg.crdownload')}}" class="img-fluid" alt="..." width="450">
+
+</div>
+
+<p id="4141"  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">
+    In this article I want to carry out an exploratory analysis of (crude) suicide rates in the world. The database is published by the WHO and includes records from 2000 to 2019 by country. The main objective is to detect which continents  and countries have the highest and lowest suicide rates.<br><br>
+    The entire project can be consulted in its <a href="https://github.com/vivivargas15/Suicides_Rate_2000-2019">GitHub repository.</a>
+    
+</p>
+
+
+<h3 id="1999"
+  class="pw-post-title et eu ev be ew ex ey ez fa fb fc fd fe ff fg fh fi fj fk fl fm fn fo fp fq fr fs ft fu fv bj"
+  data-testid="storyTitle" data-selectable-paragraph="">1. Information download</h3>
+
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">
+  The database can be downloaded free of charge from the WHO website.<br>
+  For reading, cleaning and processing we will use pandas, matplotlib, seaborn, numpy and plotly.<br>
+</p>
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/imports.png')}}" class="img-fluid" alt="..." width="7000">
+</div>
+
+<h3 id="1999"
+  class="pw-post-title et eu ev be ew ex ey ez fa fb fc fd fe ff fg fh fi fj fk fl fm fn fo fp fq fr fs ft fu fv bj"
+  data-testid="storyTitle" data-selectable-paragraph="">2. Data processing</h3>
+
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">
+  The .head() method gives us a sample of the database, highlighting that columns with NaN values can now be
+  displayed.<br>
+</p>
+
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/head.png')}}" class="img-fluid" alt="..." width="7000">
+  <br>
+</div>
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj"> We create a new data frame with the variables of interest<br>
+  <strong>Description of variables</strong><br>
+  <ul>
+    <li>ParentLocation= continent</li>
+    <li>Location = country</li>
+    <li> Period = year </li>
+    <li> Dim1 = sex </li>
+    <li>FactValueNumeric = suicide rate per 100,000 inhabitants.</li>
+  </ul>
+
+  Subsequent analyzes consider only the Both sexes category of the Dim1 variable, to facilitate comparisons between countries.
+  
+</p>
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/new_df_var_interes.png')}}" class="img-fluid" alt="..." width="7000">
+  <br>
+</div>
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">
+  We only analyzed the category “Both sexes” => df_analisis <br>
+</p>
+
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/both_sex.png')}}" class="img-fluid" alt="..." width="7000">
+  <br>
+</div>
+
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj"> We sort df_analisis by FactValueNumeric to obtain the top ten of the highest suicide rates in (2000-2019)<br>
+</p>
+
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/top10_suicides.png')}}" class="img-fluid" alt="..." width="7000">
+  <br>
+</div>
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj"> Unfortunately, only one country "Lesotho" appears in this top ten of the highest suicide rates.<br>  
+  Lesotho is a small country in Africa, mountainous, landlocked, its population lives in rural areas and is dedicated to   subsistence agriculture. It has more than 2,000,000 inhabitants.<br>
+</p>
+
+<h4 id="1999"
+  class="pw-post-title et eu ev be ew ex ey ez fa fb fc fd fe ff fg fh fi fj fk fl fm fn fo fp fq fr fs ft fu fv bj"
+  data-testid="storyTitle" data-selectable-paragraph="">Analysis for the year 2019</h4>
+
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">Countries with the highest suicide rate in 2019 <br>
+  Again Lesotho is in first place, however, 6 of the 10 countries are from the African continent (Lesotho, Eswatini, Zimbabwe, South Africa, Mozambique and Central African Republic), 2 from America (Guyana and Suriname) and 2 from the   Western Pacific (Kiribati and Micronesia)<br>
+</p>
+
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/top10_country_2019.png')}}" class="img-fluid" alt="..." width="7000">
+  <br>
+</div>
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">  Countries with the lowest suicide rate in 2019 <br>
+  Six American countries in the top 10 with the lowest suicide rates in 2019<br><br>
+</p>
+
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/top10_country_2019min.png')}}" class="img-fluid" alt="..." width="7000">
+  <br><br>
+</div>
+
+
+<h4 id="1999"
+  class="pw-post-title et eu ev be ew ex ey ez fa fb fc fd fe ff fg fh fi fj fk fl fm fn fo fp fq fr fs ft fu fv bj"
+  data-testid="storyTitle" data-selectable-paragraph="">Grouping by continent 2000-2019) </h4>
+
+
+<p id="4141"
+  class="pw-post-body-paragraph kn ko ev kp b kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk eo bj">Grouping by continent of the suicide rate, considering all the base years (2000-2019). Only considers category of both sexes. <br>
+</p>
+
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/group_continent.png')}}" class="img-fluid" alt="..." width="10000">
+  <br><br>
+</div>
+<div class="pricing-header p-2 pb-md-2 mx-auto text-center">
+  <img src="{{url_for('static', filename='css/table_groupcontinent.png')}}" class="img-fluid" alt="..." width="5000">
+  <br><br>
+</div>
+
+
+{% endblock %}
+
+ 

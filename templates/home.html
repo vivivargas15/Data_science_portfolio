@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+
+  <img src="{{url_for('static', filename='css/image_principal_EDA.jpg')}}" class="img-fluid" alt="...">
+
+</div>
+
+
 {% block content %}
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
@@ -12,7 +19,10 @@
             <ul class="list-unstyled mt-3 mb-4">
               <li>Exploratory data analysis with Python of suicides rates in the world, reported by the WHO from 2000 to 2019 </li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">more...</button>
+            <img src="{{url_for('static', filename='css/suicide_stop.jpg.crdownload')}}" class="img-fluid" alt="...">
+            <br><br>
+      
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary"><a href="{{ url_for ('suicides')}}">continue</a></button>
           </div>
         </div>
       </div>
@@ -27,7 +37,12 @@
             <ul class="list-unstyled mt-3 mb-4">
               <li>Exploratory data analysis with Python that would allow recommending books from this platform through data mining</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">more...</button>
+
+            <img src="{{url_for('static', filename='css/suicide_stop.jpg.crdownload')}}" class="img-fluid" alt="...">
+            <br><br>
+
+
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary"><a href="{{ url_for ('curriculum')}}">continue</a></button>
           </div>
         </div>
       </div>
@@ -43,7 +58,11 @@
               <li>Exploratory data analysis with Python that would allow recommending books from this platform through data
                 mining</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">more...</button>
+            <img src="{{url_for('static', filename='css/suicide_stop.jpg.crdownload')}}" class="img-fluid" alt="...">
+
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary"><a
+                href="{{ url_for ('curriculum')}}">continue</a></button>
+                <br><br>
           </div>
         </div>
       </div>

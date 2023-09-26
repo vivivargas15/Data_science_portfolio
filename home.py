@@ -7,12 +7,17 @@ app= Flask(__name__)
 def hola():
     return "hola mundo sssss"
 
-
 @app.route("/home")
 def home():
-    return render_template("index2.html")
+    return render_template("home.html")
 
+@app.route("/cv")
+def curriculum():
+    return render_template("CV.html")
 
+@app.route("/edasuicides")
+def suicides():
+    return render_template("suicides.html")
 
 
 
